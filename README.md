@@ -1,5 +1,10 @@
 # docker-handbook
 
+A Docker Image is a read-only blueprint that contains the instructions for creating a container, while a Docker Container is a live, running instance of that image
+
+### What is a Container?
+- a container is a lightweight, standalone, and executable software package that contains everything needed to run an application: code, runtime, system tools, libraries, and settings
+
 ### What is Docker?
 
 - Docker is a containerization platform used to package applications with dependencies
@@ -7,14 +12,20 @@
 ### What is an Image?
 
 - A read-only template used to create containers.
-
-### What is a Container?
-
-- A running instance of a Docker image.
+A Docker image is a read-only, lightweight, and standalone executable file that serves as a blueprint for creating Docker containers. It packages together everything needed to run an application—including the code, runtime, system libraries, tools, and settings—ensuring it runs the same way in any environment
 
 ### Difference between VM and Docker?
 
 - VM includes full OS; Docker shares host OS kernel and is lightweight.
+
+
+Docker LifeCycle
+
+There are three important things,
+
+- docker build -> builds docker images from Dockerfile
+- docker run -> runs container from docker images
+- docker push -> push the container image to public/private regestries to share the docker images.
 
 
 ## Most Important Understanding
@@ -26,9 +37,6 @@ Docker Container = Running application from image
 Dockerfile → Builds → Image
 Image → Runs → Container
 
-
-Dockerfile → Builds → Image
-Image → Runs → Container
 
 | Image | Container |
 |---|---|
