@@ -197,10 +197,15 @@ Example:
 
 ## Step 5 - Open Existing Django Project
 
-Moved into local project folder:
+Local project folder or Clone the Github repo to Any local Path
 
 ```bash
 cd <project-folder>
+```
+or
+
+```bash
+git clone <github-repo>
 ```
 
 Example:
@@ -210,6 +215,11 @@ cd D:\devops\Docker\docker-handbook\example_labs\cbvproject
 ```
 
 ## Step 6 - Build Docker Image
+
+- pwd should be the path where ```Dockerfile``` is present inside project folder.
+```bash
+./<project-folder>
+```
 
 Built Docker image:
 
