@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+               <h1> {{employee.ename}} Information   </h1>
+                  <ul>
+                    <li> <h5>Name : {{employee.ename}} </h5> </li>
+                    <li> <h5>Id : {{employee.eno}}</h5> </li>
+                    <li> <h5>Salary : {{employee.esal}}</h5> </li>
+                    <li> <h5>Address : {{employee.eadd}}</h5> </li>
+                    <li> <h5>Mobile Number : {{employee.emobile}}</h5> </li>
+                  </ul> <hr>
+                  <a class="btn btn-outline-warning" href="/update/{{employee.id}}">Update Record</a> &nbsp
+                  <a  class="btn btn-outline-secondary" href="/list2">List Page</a> &nbsp
+                  <a  class="btn btn-outline-danger" href="/delete/{{employee.id}}">Delete Record</a>
+      </div>
+      </div>
+  </body>
+</html>

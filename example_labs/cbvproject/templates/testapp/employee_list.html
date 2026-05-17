@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+        <ol>
+
+            <h1 align='center'>All Employees information</h1>
+            {% for emp in employee_list %}
+               <h2>  <li> {{emp.ename}} Information   </li> </h2>
+                  <ul>
+                    <li> <h5>Name : {{emp.ename}} </h5> </li>
+                    <li> <h5>Id : {{emp.eno}}</h5> </li>
+                    <li> <h5>Salary : {{emp.esal}}</h5> </li>
+                    <li> <h5>Address : {{emp.eadd}}</h5> </li>
+                    <li> <h5>Mobile Number : {{emp.emobile}}</h5> </li>
+                  </ul> <hr>
+
+            {% endfor %}
+
+        </ol>
+
+      </div>
+  </body>
+</html>

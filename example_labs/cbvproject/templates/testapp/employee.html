@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  </head>
+  <body>
+        <div class="container">
+          <div class="jumbotron">
+        <ol>
+            <h1 align='center'>All Employees Information</h1>
+            {% for emp in employee %}
+               <h5>  <li> <a href="/{{emp.id}}">  {{emp.ename}}  </a>   </li> </h5>
+            {% endfor %}<hr>
+            <a class="btn btn-primary" href="/create">Add New Employee Record </a>
+
+
+        </ol>
+
+      </div>
+      </div>
+  </body>
+</html>
