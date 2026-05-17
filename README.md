@@ -99,19 +99,28 @@ docker start -a <container_id>
 ```
 
 
-
+# Steps to Create Containers and Run the Application
 ## Step 1 - Open Existing Django Project
 
-Moved into local project folder:
+Local project folder or Clone the Github repo to Any local Path
 
 ```bash
 cd <project-folder>
 ```
+or
+
+```bash
+git clone <github-repo>
+```
 
 ## Step 2 - Build Docker Image
 
-Built Docker image:
+- pwd should be the path where ```Dockerfile``` is present inside project folder.
+```bash
+./<project-folder>
+```
 
+Built Docker image:
 ```bash
 docker build -t django-app .
 ```
