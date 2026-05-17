@@ -15,6 +15,17 @@ This project demonstrates:
 - Docker container lifecycle
 - Docker Desktop local deployment
 
+   ```
+    Most Important Understanding:
+        Docker Desktop =
+            Bridge between Windows and Linux containers
+    
+    and 
+
+        WSL2  =
+            Lightweight Linux layer inside Windows
+   ```
+
 ---
 
 # Features
@@ -184,4 +195,132 @@ Example:
 
 ```Hello from Docker!```
 
+## Step 5 - Open Existing Django Project
 
+Moved into local project folder:
+
+```bash
+cd <project-folder>
+```
+
+Example:
+
+```bash
+cd D:\devops\Docker\docker-handbook\example_labs\cbvproject
+```
+
+## Step 6 - Build Docker Image
+
+Built Docker image:
+
+```bash
+docker build -t django-cbvproject-app .
+```
+
+
+### Important Understanding
+
+### docker build:
+
+Creates:
+- Docker image
+
+The dot (`.`) means:
+- Current folder
+- Build context
+
+Docker reads:
+- Dockerfile
+- requirements.txt
+- project source code
+
+from current directory.
+
+---
+
+## Step 7 - Run Docker Container
+
+Started Django container:
+
+```bash
+docker run -p 8000:8000 django-cbvproject-app
+docker run -p 8000:8000 -it <imageid>
+```
+
+---
+
+### Port Mapping Understanding
+
+```bash
+-p 8000:8000
+```
+
+Means:
+
+```text
+Laptop Port 8000
+        ↓
+Container Port 8000
+```
+
+Application accessible at:
+
+```text
+http://localhost:8000
+```
+
+## Step 8 - Verify Running Container
+
+View running containers:
+
+```bash
+docker ps
+```
+
+View all containers:
+
+```bash
+docker ps -a
+```
+
+## Step 9 - Run Database Commands Inside Container
+
+Opened another terminal.
+
+Executed commands inside running container.
+
+---
+
+### Run Migrations
+
+```bash
+docker exec -it <container_id> python manage.py migrate
+```
+
+---
+
+### Populate Employee Data
+
+```bash
+docker exec -it <container_id> python populate.py
+```
+
+---
+
+### Create Superuser
+
+```bash
+docker exec -it <container_id> python manage.py createsuperuser
+```
+
+---
+
+## Step 10 - Access Application
+
+Open browser:
+
+```text
+http://localhost:8000/employees/
+```
+
+---
