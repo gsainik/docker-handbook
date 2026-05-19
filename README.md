@@ -102,6 +102,7 @@ docker start -a <container_id>
 <summary>
 <h1>Steps to Create Containers and Run the Application</h1>
 </summary>
+
 ## Step 1 - Open Existing Django Project
 
 Local project folder or Clone the Github repo to Any local Path
