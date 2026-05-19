@@ -229,7 +229,7 @@ Successfully learned:
 - Container persistence behavior
 - Running Django inside Docker container
 </details>
-____________
+
 
 <details>
 <summary>
@@ -642,6 +642,7 @@ Widely used in:
 
 ---
 </details>
+
 
 <details>
 <summary>
@@ -1274,10 +1275,14 @@ DOCKER CONTAINER
 
 ## Bind Mount Command
 
+Using ```-v```
 ```bash
 docker run -v ${PWD}:/app django-app
 ```
-
+Using ```--mount```
+```bash
+docker run --mount type=bind,source=${PWD},target=/app django-app
+```
 ---
 
 ## Command Understanding
@@ -1400,8 +1405,15 @@ docker volume create myvolume
 
 ## Use Volume in Container
 
+using ```-v```
 ```bash
 docker run -v myvolume:/app/data django-app
+```
+using ```mount```
+```bash
+docker run \
+--mount type=volume,source=myvolume,target=/app/data \
+django-app
 ```
 
 ---
@@ -1533,6 +1545,13 @@ Used For:
 ```
 
 ---
+
+## Syntax Comparision
+
+| `-v` Syntax | `--mount` Syntax |
+----------------------------------------------- |
+| `-v source:target` | `--mount type=TYPE,source=SOURCE,target=TARGET` |
+
 
 ## Key Difference Between Bind Mount and Volume
 
