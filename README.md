@@ -761,9 +761,9 @@ Result:
 
 ---
 
-# 2. Multi-Stage Dockerfile
+## 2. Multi-Stage Dockerfile
 
-## Dockerfile
+### Dockerfile
 
 ```dockerfile
 # Stage 1 - Builder
@@ -787,7 +787,7 @@ CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 ---
 
-## What Changed?
+### What Changed?
 
 Now:
 - Build environment separated
@@ -795,7 +795,7 @@ Now:
 
 ---
 
-## Stage 1 - Build Environment
+### Stage 1 - Build Environment
 
 ```dockerfile
 FROM python:3.11 AS builder
@@ -823,7 +823,7 @@ Used ONLY for:
 
 ---
 
-## Stage 2 - Runtime Environment
+### Stage 2 - Runtime Environment
 
 ```dockerfile
 FROM python:3.11-slim
@@ -842,7 +842,7 @@ Initially contains:
 
 ---
 
-## COPY --from=builder
+### COPY --from=builder
 
 ```dockerfile
 COPY --from=builder /app /app
@@ -855,7 +855,7 @@ from Stage 1.
 
 ---
 
-## Final Runtime Image
+### Final Runtime Image
 
 ```text
 ┌────────────────────────────┐
@@ -867,7 +867,7 @@ from Stage 1.
 
 ---
 
-## What Improved?
+### What Improved?
 
 Removed:
 - heavy build tools
@@ -880,7 +880,7 @@ Still contains:
 
 ---
 
-## Multi-Stage Diagram
+### Multi-Stage Diagram
 
 ```text
 STAGE 1 - BUILDER
@@ -908,9 +908,9 @@ STAGE 2 - RUNTIME
 
 ---
 
-# 3. Multi-Stage + Distroless
+## 3. Multi-Stage + Distroless
 
-## Dockerfile
+### Dockerfile
 
 ```dockerfile
 # Stage 1 - Builder
@@ -937,7 +937,7 @@ CMD ["manage.py", "runserver", "0.0.0.0:8000"]
 
 ---
 
-## Stage 1 - Builder
+### Stage 1 - Builder
 
 Same builder image:
 
@@ -959,7 +959,7 @@ Used ONLY for:
 
 ---
 
-## Stage 2 - Distroless Runtime
+### Stage 2 - Distroless Runtime
 
 ```dockerfile
 FROM gcr.io/distroless/python3
@@ -977,7 +977,7 @@ Initially contains ONLY:
 
 ---
 
-## COPY --from=builder
+### COPY --from=builder
 
 ```dockerfile
 COPY --from=builder /root/.local /root/.local
@@ -997,7 +997,7 @@ Does NOT copy:
 
 ---
 
-## Final Distroless Runtime Image
+### Final Distroless Runtime Image
 
 ```text
 ┌────────────────────────────┐
@@ -1009,7 +1009,7 @@ Does NOT copy:
 
 ---
 
-## Distroless Runtime Diagram
+### Distroless Runtime Diagram
 
 ```text
 STAGE 1 - BUILDER
@@ -1037,7 +1037,7 @@ DISTROLESS RUNTIME
 
 ---
 
-# Key Difference Comparison
+## Key Difference Comparison
 
 | Type | Final Image Contains |
 |---|---|
@@ -1047,7 +1047,7 @@ DISTROLESS RUNTIME
 
 ---
 
-# Final Image Comparison
+## Final Image Comparison
 
 ```text
 SINGLE STAGE
