@@ -1549,7 +1549,7 @@ Used For:
 ## Syntax Comparision
 
 | `-v` Syntax | `--mount` Syntax |
------------------------------------------------ |
+|---|---|
 | `-v source:target` | `--mount type=TYPE,source=SOURCE,target=TARGET` |
 
 
