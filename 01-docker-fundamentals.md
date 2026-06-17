@@ -5,30 +5,57 @@ A collection of Docker concepts, examples, and hands-on labs covering containeri
 
 A Docker Image is a read-only blueprint that contains the instructions for creating a container, while a Docker Container is a live, running instance of that image
 
-### What is a Container?
-- a container is a lightweight, standalone, and executable software package that contains everything needed to run an application: code, runtime, system tools, libraries, and settings
+![alt text](image-2.png)
 
-### What is Docker?
+## What is Docker?
 
 - Docker is a containerization platform used to package applications with dependencies
 
-### What is an Image?
+## What is a Container?
+- a container is a lightweight, standalone, and executable software package that contains everything needed to run an application: code, runtime, system tools, libraries, and settings
+
+## What is an Image?
 
 - A read-only template used to create containers.
 A Docker image is a read-only, lightweight, and standalone executable file that serves as a blueprint for creating Docker containers. It packages together everything needed to run an application—including the code, runtime, system libraries, tools, and settings—ensuring it runs the same way in any environment
 
-### Difference between VM and Docker?
+## What is a Docker Registry?
 
-- VM includes full OS; Docker shares host OS kernel and is lightweight.
+- A Docker Registry is a centralized storage system for Docker images.
+
+```text
+Public registry → Docker Hub
+Private registry → your company server (AWS ECR, GCR, etc.)
+```
+Examples:
+
+- Docker Hub
+- AWS ECR
+- GitHub Container Registry
+- GitLab Registry
+
+Think:
+
+```Registry = Image storage (like GitHub for code)```
 
 
-Docker LifeCycle
+![alt text](image.png)
+
+## Difference between VM and Docker?
+
+```VM includes full OS; Docker shares host OS kernel and is lightweight.```
+
+![alt text](image-3.png)
+
+
+## Docker LifeCycle
 
 There are three important things,
 
 - docker build -> builds docker images from Dockerfile
 - docker run -> runs container from docker images
 - docker push -> push the container image to public/private regestries to share the docker images.
+
 
 
 ## Most Important Understanding
