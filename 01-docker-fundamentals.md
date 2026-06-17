@@ -17,7 +17,23 @@ A Docker Image is a read-only blueprint that contains the instructions for creat
 ## What is an Image?
 
 - A read-only template used to create containers.
-A Docker image is a read-only, lightweight, and standalone executable file that serves as a blueprint for creating Docker containers. It packages together everything needed to run an application—including the code, runtime, system libraries, tools, and settings—ensuring it runs the same way in any environment
+A Docker image is a read-only, lightweight, and standalone executable file that serves as a blueprint for creating Docker containers. It packages together everything needed to run an application—including the code, runtime, system libraries, tools, and settings—ensuring it runs the same way in any environment.
+
+Image Lifecycle Flow:
+
+```text
+Dockerfile
+   ↓
+Build Image (local)
+   ↓
+Tag Image
+   ↓
+Push → Registry (Docker Hub)
+   ↓
+Pull (server / Kubernetes)
+   ↓
+Run Container
+```
 
 ## What is a Docker Registry?
 
